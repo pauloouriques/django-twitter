@@ -1,0 +1,21 @@
+{% if fields %}
+    <ul>
+   	Para ter acesso ao PIN é preciso redirecionar para o
+    <a href={{ fields.url }} target="_blank"> Twitter </a>
+    , clicar em ALLOW. Depois disto, cole o numero PIN no campo abaixo e clique em OK.
+    </ul>
+    
+    <br><br><br>
+    <form action ="/teste/mainPage/" method="post">
+
+	{{"PIM :"}}
+	<input type="textfield" name="pin" id="01" />
+	<input type="hidden" name="key" value = {{ fields.key }} id="01"/> 
+	<input type="hidden" name="secret" value = {{ fields.secret }} id="01" /> 
+	<input type="submit" value="OK" />
+	
+	<form>
+    
+{% else %}
+    <p>No t are available.</p>
+{% endif %}
