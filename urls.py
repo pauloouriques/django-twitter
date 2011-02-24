@@ -5,9 +5,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^teste/$', 'Testando.teste.views.index'),
-    (r'^teste/tweets/$', 'Testando.teste.views.tweets'),
-    (r'^teste/mainPage/$', 'Testando.teste.views.mainPage'),
+    (r'^teste/$', 'teste.views.index'),
+    (r'^teste/tweets/$', 'teste.views.tweets'),
+    (r'^teste/mainPage/$', 'teste.views.mainPage'),
     (r'^admin/(.*)', admin.site.root),
 )
 

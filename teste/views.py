@@ -56,7 +56,6 @@ def mainPage(request):
     
     status  = []
     retorno = []
-    flag = True
     
     for i in range(10):
         status = api.home_timeline(page=i)
@@ -64,11 +63,9 @@ def mainPage(request):
             text = update.text
             splitedText = text.split(" ")
             
-            if "#ambiente" in splitedText and flag:
+            if "#ambiente" in splitedText:
                 retorno.append(update.user.screen_name)
                 tweetText = "@" + update.user.screen_name +" usou a tag #ambiente. Parabens pela iniciativa."
                 api.update_status(tweetText)
-                
-                flag = False
         
     return render_to_response('teste/mainPage.html', {'retweeteds': retorno,})
